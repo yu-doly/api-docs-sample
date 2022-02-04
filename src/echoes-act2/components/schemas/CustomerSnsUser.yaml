@@ -1,0 +1,45 @@
+type: object
+required:
+  - id
+  - link
+  - name
+  - username
+  - sns
+properties:
+  id:
+    type: number
+    example: 1234567890000000000
+  link:
+    description: |
+      Link to sns profile page.
+      TW: https://twitter.com/{screen_name}
+      IG: https://www.instagram.com/{username}
+    type: string
+    example: https://twitter.com/echo_act0
+  image:
+    description: Image of sns profile page.
+    type: string
+    nullable: true
+    example: >-
+      https://pbs.twimg.com/profile_images/1336466705703288832/dm3uGc96_normal.jpg
+  name:
+    description: Name for display that it can have space.
+    type: string
+    example: echo🤩act0
+  username:
+    description: |
+      Unique name.
+      It is displayed with "@" on SNS and does not contain space.
+      It is "screen_name" on TW and "username" on IG.
+    type: string
+    example: echo_act0
+  sns:
+    description: |
+      Sns type.
+      TW: 1
+      IG: 2
+    type: number
+    enum:
+      - 1
+      - 2
+    example: 1

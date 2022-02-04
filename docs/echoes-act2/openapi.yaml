@@ -1,0 +1,106 @@
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: echoes-xxxx API
+  contact:
+    url: http://example.com/contact
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://redocly.github.io/openapi-template/logo.png
+  description: >
+    This is API for echoes services.
+
+    # Introduction
+
+    This API definition is described in 
+
+    [OpenAPI
+    format](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md).
+
+    It also demonstrates features of
+    [create-openapi-repo](https://github.com/Redocly/create-openapi-repo) tool
+    and 
+
+    [Redoc](https://github.com/Redocly/Redoc) documentation engine. So beyond
+    the standard OpenAPI syntax we use a few 
+
+    [vendor
+    extensions](https://github.com/Redocly/Redoc/blob/master/docs/redoc-vendor-extensions.md).
+externalDocs:
+  description: Find out how to create a GitHub repo for your OpenAPI definition.
+  url: https://github.com/Rebilly/generator-openapi-repo
+tags:
+  - name: CustomerSnsUser
+    description: Operations about customer user.
+servers:
+  - url: http://act2.echoes.test
+paths:
+  /login-customer-sns-user:
+    get:
+      tags:
+        - CustomerSnsUser
+      summary: Get login customer user
+      operationId: getLoginCustomerSnsUser
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSnsUser'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+components:
+  schemas:
+    CustomerSnsUser:
+      type: object
+      required:
+        - id
+        - link
+        - name
+        - username
+        - sns
+      properties:
+        id:
+          type: number
+          example: 1234567890000000000
+        link:
+          description: |
+            Link to sns profile page.
+            TW: https://twitter.com/{screen_name}
+            IG: https://www.instagram.com/{username}
+          type: string
+          example: https://twitter.com/echo_act0
+        image:
+          description: Image of sns profile page.
+          type: string
+          nullable: true
+          example: >-
+            https://pbs.twimg.com/profile_images/1336466705703288832/dm3uGc96_normal.jpg
+        name:
+          description: Name for display that it can have space.
+          type: string
+          example: echo🤩act0
+        username:
+          description: |
+            Unique name.
+            It is displayed with "@" on SNS and does not contain space.
+            It is "screen_name" on TW and "username" on IG.
+          type: string
+          example: echo_act0
+        sns:
+          description: |
+            Sns type.
+            TW: 1
+            IG: 2
+          type: number
+          enum:
+            - 1
+            - 2
+          example: 1

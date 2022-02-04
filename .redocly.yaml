@@ -1,0 +1,21 @@
+# See https://redoc.ly/docs/cli/configuration/ for more information.
+apiDefinitions:
+  echoes-act2: src/echoes-act2/openapi.yaml
+  # hs: src/hs/openapi.yaml
+  # hs-basic: src/hs-basic/openapi.yaml
+  # hc: src/hc/openapi.yaml
+  # ugc: src/ugc/openapi.yaml
+  # gift: src/gift/openapi.yaml
+  # coupon: src/coupon/openapi.yaml
+  echoes-form: src/echoes-form/openapi.yaml
+lint:
+  extends:
+    - recommended
+  rules:
+    no-unused-components: warning
+referenceDocs:
+  htmlTemplate: ./template/index.html
+  theme:
+    colors:
+      primary:
+        main: "#209cee"

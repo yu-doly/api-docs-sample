@@ -1,0 +1,16 @@
+{
+  "name": "echoes-api-docs",
+  "version": "1.0.0",
+  "dependencies": {
+    "@redocly/openapi-cli": "^1.0.0-beta.80"
+  },
+  "private": true,
+  "scripts": {
+    "start": "/bin/sh scripts/preview-by-service.sh",
+    "build": "/bin/sh scripts/bundle-by-service.sh",
+    "split": "/bin/sh scripts/split-by-service.sh",
+    "test": "openapi lint",
+    "create:service": "cp -r template/echoes-service src/echoes-${npm_config_service_name}",
+    "clean": "rm -rf docs"
+  }
+}

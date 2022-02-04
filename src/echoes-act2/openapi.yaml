@@ -1,0 +1,41 @@
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: echoes-xxxx API
+  contact:
+    url: http://example.com/contact
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://redocly.github.io/openapi-template/logo.png
+  description: >
+    This is API for echoes services.
+
+    # Introduction
+
+    This API definition is described in 
+
+    [OpenAPI
+    format](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md).
+
+    It also demonstrates features of
+    [create-openapi-repo](https://github.com/Redocly/create-openapi-repo) tool
+    and 
+
+    [Redoc](https://github.com/Redocly/Redoc) documentation engine. So beyond
+    the standard OpenAPI syntax we use a few 
+
+    [vendor
+    extensions](https://github.com/Redocly/Redoc/blob/master/docs/redoc-vendor-extensions.md).
+externalDocs:
+  description: Find out how to create a GitHub repo for your OpenAPI definition.
+  url: https://github.com/Rebilly/generator-openapi-repo
+tags:
+  - name: CustomerSnsUser
+    description: Operations about customer user.
+servers:
+  - url: http://act2.echoes.test
+paths:
+  /login-customer-sns-user:
+    $ref: paths/login-customer-sns-user.yaml
